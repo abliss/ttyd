@@ -1,0 +1,3 @@
+[submodule "upty"]
+	path = upty
+	url = https://github.com/abliss/upty
