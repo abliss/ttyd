@@ -7,9 +7,9 @@ const pkgdef :Spk.PackageDefinition = (
   manifest = (
     appTitle = (defaultText = "ttyd"),
     appVersion = 0,
-    appMarketingVersion = (defaultText = "0.0.0"),
+    appMarketingVersion = (defaultText = "0.0.1"),
     actions = [
-      ( nounPhrase = (defaultText = "instance"),
+      ( nounPhrase = (defaultText = "terminal"),
         command = .myCommand
       )
     ],
@@ -123,38 +123,15 @@ const pkgdef :Spk.PackageDefinition = (
       # permission, or for more information, see "PermissionDef" in
       # https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/grain.capnp
         (
-          name = "read",
-          title = (defaultText = "read"),
-          description = (defaultText = "Read-only login (not yet implemented)"),
-        ),
-        (
           name = "write",
           title = (defaultText = "write"),
-          description = (defaultText = "Read-write login"),
+          description = (defaultText = "Control the terminal"),
         ),
       ],
       roles = [
-        # Roles are logical collections of permissions.  For instance, your app may have
-        # a "viewer" role and an "editor" role
-        (
-          title = (defaultText = "viewer"),
-          # Name of the role.  Shown in the Sandstorm UI to indicate which users have which roles.
-  
-          permissions  = [true, false],
-          # An array indicating which permissions this role carries.
-          # It should be the same length as the permissions array in
-          # viewInfo, and the order of the lists must match.
-  
-          verbPhrase = (defaultText = "can login without writing"),
-          # Brief explanatory text to show in the sharing UI indicating
-          # what a user assigned this role will be able to do with the grain.
-  
-          description = (defaultText = "users can login, but the filesystem will be mounted read-only (not yet implented)"),
-          # Prose describing what this role means, suitable for a tool tip or similar help text.
-        ),
         (
           title = (defaultText = "owner"),
-          permissions  = [true, true],
+          permissions  = [true],
           verbPhrase = (defaultText = "Can login and write"),
           description = (defaultText = "users can login and write files."),
         ),
