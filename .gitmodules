@@ -1,3 +1,6 @@
 [submodule "upty"]
 	path = upty
 	url = https://github.com/abliss/upty
+[submodule "tmux"]
+	path = tmux
+	url = git@github.com:abliss/tmux
